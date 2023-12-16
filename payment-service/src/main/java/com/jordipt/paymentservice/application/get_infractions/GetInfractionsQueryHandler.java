@@ -1,11 +1,11 @@
-package com.jordipt.paymentservice.application.get_payments;
+package com.jordipt.paymentservice.application.get_infractions;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class GetPaymentsUseCase {
+public class GetInfractionsQueryHandler {
 
-    public GetPaymentsUseCase() {
+    public GetInfractionsQueryHandler() {
     }
 
     public void execute(String paymentId) {

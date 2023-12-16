@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface GaujeRepository {
+public interface GaujeInfractionRepository {
     GaujeInfraction findById(String id);
 
     List<Infraction> findByIds(List<String> infractionIds);

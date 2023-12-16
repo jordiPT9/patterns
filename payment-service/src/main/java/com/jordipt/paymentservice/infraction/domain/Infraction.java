@@ -2,20 +2,18 @@ package com.jordipt.paymentservice.infraction.domain;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
-import java.util.List;
 
 public abstract class Infraction {
     protected String id;
     protected String licensePlate;
     protected Timestamp readDate;
-    protected String expedient;
+    protected String expedient; // TODO: que sea el id?
     protected String agentCode;
     protected String place;
     protected String exportedDate;
 
-    // podriamos mirar alguna manera de guardar el path completo para saber en que bucket está directamente
+    // TODO: podriamos mirar alguna manera de guardar el path completo para saber en que bucket está directamente
     protected HashMap<ImageType, String> imagesPaths;
-    protected List<String> streamImages;
 
     public Infraction(String id,
                       String licensePlate,

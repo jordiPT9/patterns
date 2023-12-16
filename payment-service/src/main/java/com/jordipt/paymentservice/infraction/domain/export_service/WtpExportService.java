@@ -3,11 +3,11 @@ package com.jordipt.paymentservice.infraction.domain.export_service;
 import com.jordipt.paymentservice.infraction.domain.ImageType;
 import com.jordipt.paymentservice.infraction.domain.Infraction;
 import com.jordipt.paymentservice.infraction.domain.WtpContentService;
-import com.jordipt.paymentservice.infraction.domain.WtpInfraction;
 import com.jordipt.paymentservice.infraction.domain.WtpInfractionFileCreator;
 import com.jordipt.paymentservice.org_data.OrgType;
 import com.jordipt.paymentservice.org_data.WtpData;
 import com.jordipt.paymentservice.org_data.WtpDataRepository;
+import com.jordipt.paymentservice.org_data.WtpInfraction;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,14 +30,7 @@ public class WtpExportService implements ExportService {
     @Override
     public String createExport(List<? extends Infraction> infractions, String centerName) {
         List<WtpInfraction> wtpInfractions = infractions.stream()
-                .map(infraction -> WtpInfraction.builder()
-                        .licensePlate(infraction.getLicensePlate())
-                        .readingDate(infraction.getReadDate())
-                        .expedient(infraction.getExpedient())
-                        .agentCode(infraction.getAgentCode())
-                        .place(infraction.getPlace())
-                        .infractionImages(infraction.getImagesPaths())
-                        .build())
+                .map(WtpInfraction::new)
                 .collect(Collectors.toList());
 
         WtpData wtpData = wtpDataRepository.findByOrg(OrgType.WTP);

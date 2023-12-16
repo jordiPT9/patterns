@@ -1,6 +1,5 @@
 package com.jordipt.paymentservice.infraction_red_light;
 
-import com.jordipt.paymentservice.infraction.domain.Infraction;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

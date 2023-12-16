@@ -1,6 +1,7 @@
 package com.jordipt.paymentservice.infraction.domain;
 
 import com.jordipt.paymentservice.org_data.WtpData;
+import com.jordipt.paymentservice.org_data.WtpInfraction;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
